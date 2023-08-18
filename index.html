@@ -1,4 +1,743 @@
+
 <!DOCTYPE html>
 <html>
+<head>
+  <link rel="stylesheet" href="page_assets/bulma.min.css">
+  <link rel="stylesheet" href="page_assets/bulma-carousel.min.css">
+<!--  <link rel="stylesheet" href="page_assets/bulma-slider.min.css">-->
+<!--  <link rel="stylesheet" href="page_assets/index.css">-->
 
+  <script src="page_assets/jquery.min.js"></script>
+  <script src="page_assets/bulma-carousel.min.js"></script>
+  <script src="page_assets/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-centered has-text-centered">
+      <h1 class="title is-1 publication-title">Dynamic 3D Gaussians:<br>Tracking by Persistent Dynamic View Synthesis</h1>
+       <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://www.vision.rwth-aachen.de/person/216/">Jonathon Luiten</a><sup>1,2</sup></span> &emsp;
+            <span class="author-block">
+              <a href="https://grgkopanas.github.io/">Georgios Kopanas</a><sup>3</sup></span> &emsp;
+            <span class="author-block">
+              <a href="https://www.vision.rwth-aachen.de/person/1/">Bastian Leibe</a><sup>2</sup> </span> &emsp;
+            <span class="author-block">
+              <a href="https://www.cs.cmu.edu/~deva/">Deva Ramanan</a><sup>1</sup> </span>
+          </div>
+        <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Carnegie Mellon University, USA </span> &emsp;
+            <span class="author-block"><sup>2</sup>RWTH Aachen University, Germany </span><t> &emsp;
+            <span class="author-block"><sup>2</sup>Inria & Universite Cote d’Azur France</span>
+          </div>
+          
+        <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="./paper.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://twitter.com/JonathonLuiten"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span>Tweet Thread</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/JonathonLuiten/Dynamic3DGaussians"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span>Code + Data - Coming Soon (ETA Oct 1)</span>
+                  </a>
+              </span>
+          </div>
+    </div>
+  </div>
+</section>
+
+<div class="container is-centered has-text-centered">
+<h2 class="title is-3">Abstract</h2>
+We present a method that simultaneously addresses the tasks of dynamic scene novel-view synthesis and six degree-of-freedom (6-DOF) tracking of all dense scene elements. We follow an analysis-by-synthesis framework, inspired by recent work that models scenes as a collection of 3D Gaussians which are optimized to reconstruct input images via differentiable rendering. To model dynamic scenes, we allow Gaussians to move and rotate over time while enforcing that they have persistent color, opacity, and size. By regularizing Gaussians' motion and rotation with local-rigidity constraints, we show that our Dynamic 3D Gaussians correctly model the same area of physical space over time, including the rotation of that space. Dense 6-DOF tracking and dynamic reconstruction emerges naturally from persistent dynamic view synthesis, without requiring any correspondence or flow as input. We demonstrate a large number of downstream applications enabled by our representation, including first-person view synthesis, dynamic compositional scene synthesis, and 4D video editing. 
+<br><br>
+</div>
+
+<div class="container is-centered has-text-centered">
+<h2 class="title is-3">Video Results</h2>
+Click videos below to play. Click white arrows to scroll across to see more videos. <br>
+If too many are playing at once, computer may lag, refresh page and continue browsing.
+</div>
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-centered has-text-centered">
+          <h2 class="title is-3">Novel-View Synthesis + Track Trajectories</h2>
+          Novel-View rendering visualizing the 3D trajectories (with occlusions) of a random 3% of the Gaussians over the last 15 timesteps (0.5s) of the sequence.
+          <div class="carousel results-carousel">
+    
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/0/juggle.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/0/softball.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/0/tennis.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/0/football.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/0/basketball.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/0/handstand.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/0/sway.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/0/boxes.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/0/lift.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-centered has-text-centered">
+          <h2 class="title is-3">Depth Synthesis + Track Trajectories</h2>
+          Novel-View depth rendering also showing the point track trajectories.
+          <div class="carousel results-carousel">
+    
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/1/juggle.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/1/softball.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/1/tennis.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/1/football.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/1/basketball.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/1/handstand.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/1/sway.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/1/boxes.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/1/lift.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-centered has-text-centered">
+          <h2 class="title is-3">6-DOF (including Rotation) Tracking</h2>
+          Visualization of the relative rotation of tracked points. Coloured vectors are initialized to face left in camera-space, and rotate in 3D over time along with the rotation of their respective Gaussians.
+          <div class="carousel results-carousel">
+    
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/2/juggle.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/2/softball.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/2/tennis.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/2/football.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/2/basketball.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/2/handstand.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/2/sway.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/2/boxes.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/2/lift.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-centered has-text-centered">
+          <h2 class="title is-3">Comparison with Ground-Truth 3D Tracks</h2>
+          Comparison between predicted 3D tracks (<font color="blue">blue</font>) and ground-truth 3D tracks (<font color="red">red</font>)
+          <div class="carousel results-carousel">
+    
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/3/juggle.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/3/softball.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/3/tennis.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/3/football.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/3/basketball.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/3/boxes.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-centered has-text-centered">
+          <h2 class="title is-3">Underlying Gaussian Centers</h2>
+          Coloured point cloud showing the Dynamic 3D Gaussian centers over time.
+          <div class="carousel results-carousel">
+    
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/4/juggle.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/4/softball.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/4/tennis.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/4/football.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/4/basketball.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/4/handstand.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/4/sway.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/4/boxes.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/4/lift.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-centered has-text-centered">
+          <h2 class="title is-3">Gaussian-Eye View: First-Person</h2>
+          By placing a camera at at a particular Gaussian, we can render the world from the point-of-view of that Gaussian as it moves over time. Below, we present the actor's first-person view.
+          <div class="carousel results-carousel">
+    
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/5/juggle.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/5/softball.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/5/tennis.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/5/football.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/5/basketball.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-centered has-text-centered">
+          <h2 class="title is-3">Gaussian-Eye View: Object View</h2>
+          We can also render the from the perspective of objects in the scene. Note, the renderer doesn't perform as well with very close Gaussians.
+          <div class="carousel results-carousel">
+    
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/6/juggle.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/6/basketball.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/6/juggle.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/6/basketball.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/6/juggle.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/6/basketball.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-centered has-text-centered">
+          <h2 class="title is-3">Compositional Dynamic Scenes</h2>
+          Gaussians from different dynamic scenes can easily be composed together and rendered to make new scenes.
+          <div class="carousel results-carousel">
+    
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/7/garden.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/7/dining.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/7/playroom.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/7/garden.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/7/dining.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/7/playroom.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-centered has-text-centered">
+          <h2 class="title is-3">Scene-Conditional Object Insertion</h2>
+          We can reconstruct new objects from static scenes (e.g. like this hat) and attach them to a selected Gaussian such that they move and rotate along with the dynamic scene.
+          <div class="carousel results-carousel">
+    
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/8/handstand.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/8/juggle.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/8/handstand_d.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/8/juggle_d.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/8/handstand.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/8/juggle.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/8/handstand_d.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/8/juggle_d.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-centered has-text-centered">
+          <h2 class="title is-3">Edit Propagation</h2>
+          Edits can made (e.g. in photoshop) to any rendered image, which can then be 'baked' back into the Gaussians and propagated to all timesteps.
+          <div class="carousel results-carousel">
+    
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/9/juggle.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/9/softball.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/9/juggle.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/9/softball.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/9/juggle.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item">
+              <video poster="" controls muted loop playsinline height="100%">
+                <source src="./vid_assets/9/softball.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{luiten2023dynamic,
+  author    = {Luiten, Jonathon and Kopanas, Georgios and Leibe, Bastian and Ramanan, Deva},
+  title     = {Dynamic 3D Gaussians: Tracking by Persistent Dynamic View Synthesis},
+  journal   = {preprint},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website template adapted from <a href="https://github.com/nerfies/nerfies.github.io">here</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
 </html>
